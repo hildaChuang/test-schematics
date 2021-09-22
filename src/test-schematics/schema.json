@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "title": "Test Option Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "Who do you want to greet?"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

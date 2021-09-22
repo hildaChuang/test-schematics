@@ -3,7 +3,8 @@
   "schematics": {
     "test-schematics": {
       "description": "A blank schematic.",
-      "factory": "./test-schematics/index#testSchematics"
+      "factory": "./test-schematics/index#testSchematics",
+      "schema": "./test-schematics/schema.json"
     }
   }
 }
