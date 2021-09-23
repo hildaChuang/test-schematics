@@ -13,10 +13,15 @@ export function testSchematics(_options: Schema): Rule {
       template({
         ..._options, // 使用者所輸入的參數
         ...strings,  // 將這些函式加到規則裡，範本語法才能正常運作
+        addExclamation
       })
     ]);
     return mergeWith(sourceParametrizedTemplates)(tree, _context);
   };
+}
+
+function addExclamation(value: string) {
+  return value + '!';
 }
 
 export interface Schema {
