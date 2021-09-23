@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "$id": "testSchematics",
+  "$id": "testSchematicsSchema",
   "title": "Test Option Schema",
   "description": "First schematics, generate a file",
   "type": "object",
