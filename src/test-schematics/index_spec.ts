@@ -16,5 +16,10 @@ describe('test-schematics', () => {
     const dasherizeName = strings.dasherize(name);
     const fullFileName = `/hello-${dasherizeName}.component.ts`;
     expect(tree.files).toContain(fullFileName);
+
+    // 使用正規表示法驗證內容正確性
+    const fileContent = tree.readContent(fullFileName);
+    expect(fileContent).toMatch(/hello-hilda-chuang/);
+    expect(fileContent).toMatch(/HelloHildaChuang/);
   });
 });
