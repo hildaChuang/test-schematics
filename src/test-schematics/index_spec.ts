@@ -5,49 +5,23 @@ import * as path from 'path';
 const collectionPath = path.join(__dirname, '../collection.json');
 
 describe('test-schematics', () => {
-  it('not set file name', async () => {
+  const expectResult = async (fileName?: string) => {
+    const fullFileName = `/${fileName || 'default'}`;
+    const params = fileName ? {name: fileName} : {};
     const runner = new SchematicTestRunner('schematics', collectionPath);
     const tree = await runner
-      .runSchematicAsync('test-schematics', {}, Tree.empty())
+      .runSchematicAsync('test-schematics', params, Tree.empty())
       .toPromise();
 
-    expect(tree.files).toContain('/default');
+    expect(tree.files).toContain(fullFileName);
+    expect(tree.readContent(fullFileName)).toEqual('hello');
+  }
+
+  it('沒給檔名，檔名為 default，內容為 "hello"', async () => {
+    expectResult();
   });
 
-  it('set file name', async () => {
-    const fileName = 'Hilda';
-    const runner = new SchematicTestRunner('schematics', collectionPath);
-    const tree = await runner
-      .runSchematicAsync(
-        'test-schematics',
-        { name: fileName },
-        Tree.empty()
-      )
-      .toPromise();
-
-    expect(tree.files).toContain(`/${fileName}`);
-  });
-
-  it('not set file name - content is hello', async () => {
-    const runner = new SchematicTestRunner('schematics', collectionPath);
-    const tree = await runner
-      .runSchematicAsync('test-schematics', {}, Tree.empty())
-      .toPromise();
-
-    expect(tree.readContent('/default')).toEqual('hello');
-  });
-
-  it('set file name -  content is hello', async () => {
-    const fileName = 'Hilda';
-    const runner = new SchematicTestRunner('schematics', collectionPath);
-    const tree = await runner
-      .runSchematicAsync(
-        'test-schematics',
-        { name: fileName },
-        Tree.empty()
-      )
-      .toPromise();
-
-    expect(tree.readContent(`/${fileName}`)).toEqual('hello');
+  it('給檔名，檔名為 Hilda，內容為 "hello"', async () => {
+    expectResult('Hilda');
   });
 });
