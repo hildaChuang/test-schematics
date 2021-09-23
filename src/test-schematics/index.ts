@@ -5,7 +5,7 @@ import { strings } from "@angular-devkit/core";
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
-export function testSchematics(_options: Schema): Rule {
+export function testSchematics(_options: TestSchematicsSchema): Rule {
   return (tree: Tree, _context: SchematicContext) => {
     // 使用範本
     const sourceTemplates = url('./files');
@@ -17,8 +17,4 @@ export function testSchematics(_options: Schema): Rule {
     ]);
     return mergeWith(sourceParametrizedTemplates)(tree, _context);
   };
-}
-
-export interface Schema {
-  name: string
 }
