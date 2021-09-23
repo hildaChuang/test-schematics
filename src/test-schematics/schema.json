@@ -12,7 +12,15 @@
         "$source": "argv",
         "index": 0
       },
-      "x-prompt": "Who do you want to greet?"
+      "x-prompt": {
+        "message": "Who do you want to greet?",
+        "type": "list",
+        "items": [
+          {"value": "hilda", "label": "Hilda"},
+          {"value": "clark", "label": "Clark"},
+          {"value": "alan", "label": "Alan"}
+        ]
+      }
     }
   },
   "required": [
