@@ -13,4 +13,18 @@ describe('test-schematics', () => {
 
     expect(tree.files).toContain('/default');
   });
+
+  it('set file name', async () => {
+    const fileName = 'Hilda';
+    const runner = new SchematicTestRunner('schematics', collectionPath);
+    const tree = await runner
+      .runSchematicAsync(
+        'test-schematics',
+        { name: fileName },
+        Tree.empty()
+      )
+      .toPromise();
+
+    expect(tree.files).toContain(`/${fileName}`);
+  });
 });
