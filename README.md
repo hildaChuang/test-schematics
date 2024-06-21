@@ -2,6 +2,8 @@
 
 This repository is a basic Schematic implementation that serves as a starting point to create and publish Schematics to NPM.
 
+學習資源來自：[高效 Coding 術：Angular Schematics 實戰三十天 系列](https://ithelp.ithome.com.tw/users/20090728/ironman/2149)
+
 ### Testing
 
 To test locally, install `@angular-devkit/schematics-cli` globally and use the `schematics` command line tool. That tool acts the same as the `generate` command of the Angular CLI, but also has a debug mode.
