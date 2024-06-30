@@ -4,6 +4,14 @@ This repository is a basic Schematic implementation that serves as a starting po
 
 學習資源來自：[高效 Coding 術：Angular Schematics 實戰三十天 系列](https://ithelp.ithome.com.tw/users/20090728/ironman/2149)
 
+#### day 3
+```bash
+npm run build
+schematics .:test-schematics --name={fileName}
+schematics .:test-schematics --name=hilda --dry-run=false
+```
+
+
 ### Testing
 
 To test locally, install `@angular-devkit/schematics-cli` globally and use the `schematics` command line tool. That tool acts the same as the `generate` command of the Angular CLI, but also has a debug mode.
