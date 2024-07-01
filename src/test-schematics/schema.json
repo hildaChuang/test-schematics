@@ -13,6 +13,15 @@
         "index": 0
       },
       "x-prompt": "What name would you want to set?"
+    },
+    "isDryRun": {
+      "type": "boolean",
+      "description": "Is this schematic is DRY run?",
+      "$default": {
+        "$source": "argv",
+        "index": 1
+      },
+      "x-prompt": "Is this DRY run?"
     }
   },
   "required": [
