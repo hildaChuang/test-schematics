@@ -4,6 +4,11 @@ This repository is a basic Schematic implementation that serves as a starting po
 
 學習資源來自：[高效 Coding 術：Angular Schematics 實戰三十天 系列](https://ithelp.ithome.com.tw/users/20090728/ironman/2149)
 
+#### day 4
+```bash
+npm test
+```
+
 #### day 3
 ```bash
 npm run build
