@@ -11,7 +11,8 @@
       "$default": {
         "$source": "argv",
         "index": 0
-      }
+      },
+      "x-prompt": "What name would you want to set?"
     }
   },
   "required": [
