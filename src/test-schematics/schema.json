@@ -1,16 +1,13 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "title": "Test Option Schema",
+  "$id": "testSchematics2024",
+  "title": "Hello Schema",
+  "description": "Generate a file of test schematics (JavaScript)",
   "type": "object",
   "properties": {
     "name": {
       "type": "string",
-      "description": "name",
-      "$default": {
-        "$source": "argv",
-        "index": 0
-      },
-      "x-prompt": "Who do you want to greet?"
+      "description": "The name of the person"
     }
   },
   "required": [
