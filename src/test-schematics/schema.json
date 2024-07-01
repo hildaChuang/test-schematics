@@ -21,7 +21,14 @@
         "$source": "argv",
         "index": 1
       },
-      "x-prompt": "Is this DRY run?"
+      "x-prompt": {
+        "message": "Is this DRY run?",
+        "type": "list",
+        "items": [
+          { "value": true, "label": "do '--dry-run=true'"},
+          { "value": false, "label": "do '--dry-run=false'"}
+        ]
+      }
     }
   },
   "required": [
