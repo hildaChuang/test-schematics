@@ -1,16 +1,34 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "title": "Test Option Schema",
+  "$id": "testSchematics2024",
+  "title": "Hello Schema",
+  "description": "Generate a file of test schematics (JavaScript)",
   "type": "object",
   "properties": {
     "name": {
       "type": "string",
-      "description": "name",
+      "description": "The name of the person",
       "$default": {
         "$source": "argv",
         "index": 0
       },
-      "x-prompt": "Who do you want to greet?"
+      "x-prompt": "What name would you want to set?"
+    },
+    "isDryRun": {
+      "type": "boolean",
+      "description": "Is this schematic is DRY run?",
+      "$default": {
+        "$source": "argv",
+        "index": 1
+      },
+      "x-prompt": {
+        "message": "Is this DRY run?",
+        "type": "list",
+        "items": [
+          { "value": true, "label": "do '--dry-run=true'"},
+          { "value": false, "label": "do '--dry-run=false'"}
+        ]
+      }
     }
   },
   "required": [
