@@ -1,5 +1,5 @@
 import { apply, mergeWith, Rule, SchematicContext, template, Tree, url } from '@angular-devkit/schematics';
-
+import { strings } from "@angular-devkit/core";
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
@@ -16,7 +16,8 @@ export function testSchematics(_options: Schema): Rule {
       template({
         // 使用者輸入的參數 name 取代範本檔名的 '__name__'
         ..._options,
-        // ...strings,
+        // 必須引入「範本語法」才有作用
+        ...strings,
       })
     ]);
     return mergeWith(sourceParametrizedTemplate);
